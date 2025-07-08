@@ -66,13 +66,9 @@ async function topWorkplaces() {
     .sort((a, b) => b.shifts - a.shifts)
     .slice(0, 3);
 
-  for (const item of result) {
-    console.log(`{name: "${item.name}", shifts: ${item.shifts}}`);
-  }
+  console.log(JSON.stringify(result, null, 2));
 }
 
 topWorkplaces().catch((err) => {
   console.error("Error:", err);
   process.exit(1);
-});
-

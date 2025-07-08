@@ -58,7 +58,7 @@ async function topWorkplaces() {
     workplaceMap.set(wp.id, wp.name);
   }
 
-  const result = Object.entries(shiftCount)
+   const result = Object.entries(shiftCount)
     .map(([id, count]: [string, number]) => ({
       name: workplaceMap.get(id) || "Unknown",
       shifts: count,
@@ -72,3 +72,4 @@ async function topWorkplaces() {
 topWorkplaces().catch((err) => {
   console.error("Error:", err);
   process.exit(1);
+});
